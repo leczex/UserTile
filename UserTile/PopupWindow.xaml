@@ -1,0 +1,116 @@
+<Window
+	x:Class="UserTile.PopupWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Width="265"
+	Height="230"
+	WindowStyle="None"
+	MaxWidth="265"
+	MaxHeight="230"
+	MinWidth="265"
+	MinHeight="230"
+	ShowInTaskbar="False" xmlns:usertile="clr-namespace:UserTile"
+	Loaded="Window_Loaded"
+	Deactivated="Window_Deactivated"
+	SourceInitialized="Window_SourceInitialized"
+	Closed="Window_Closed">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				x:Key="TextBlockStyle"
+				TargetType="{x:Type TextBlock}">
+				<Setter
+					Property="TextBlock.FontSize"
+					Value="13" />
+				<Setter
+					Property="FrameworkElement.Cursor"
+					Value="Hand" />
+				<Setter
+					Property="TextBlock.Foreground"
+					Value="#0066CC" />
+				<Style.Triggers>
+					<Trigger
+						Property="UIElement.IsMouseOver"
+						Value="True">
+						<Setter
+							Property="TextBlock.TextDecorations"
+							Value="Underline" />
+					</Trigger>
+				</Style.Triggers>
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<Rectangle
+			Height="15"
+			VerticalAlignment="Top"
+			Fill="#6d6d6d" />
+		<TextBlock
+			Name="Username"
+			Text="Administrator"
+			Margin="3,0,0,0" />
+		<Rectangle
+			Height="1"
+			Fill="#FF808080"
+			VerticalAlignment="Bottom"
+			SnapsToDevicePixels="True"
+			Opacity="0.4"
+			Margin="0,0,0,87" />
+		<StackPanel
+			VerticalAlignment="Bottom"
+			Margin="22,0,22,7">
+			<TextBlock
+				Name="SwitchUserButton"
+				Text="Switch user"
+				Margin="0,0,0,13"
+				Style="{StaticResource TextBlockStyle}"
+				MouseLeftButtonUp="SwitchUserButtonMouseLeftButtonUp" />
+			<TextBlock
+				Name="LogOffButton"
+				Text="Log off"
+				Margin="0,0,0,10"
+				FontSize="13"
+				Style="{StaticResource TextBlockStyle}"
+				MouseLeftButtonUp="LogOffButtonMouseLeftButtonUp" />
+			<TextBlock
+				Name="LockButton"
+				Text="Lock PC"
+				Margin="0,0,0,0"
+				FontSize="13"
+				Style="{StaticResource TextBlockStyle}"
+				MouseLeftButtonUp="LockButtonMouseLeftButtonUp" />
+		</StackPanel>
+		<StackPanel
+			VerticalAlignment="Top"
+			Margin="22,47,22,0">
+			<TextBlock
+				Name="MySettingsButton"
+				Text="My Settings"
+				Margin="0,0,0,13"
+				FontSize="13"
+				Style="{StaticResource TextBlockStyle}"
+				MouseLeftButtonUp="MySettingsButtonMouseLeftButtonUp" />
+			<TextBlock
+				Name="MyLookButton"
+				Text="My Look"
+				Margin="0,0,0,0"
+				FontSize="13"
+				Style="{StaticResource TextBlockStyle}"
+				MouseLeftButtonUp="MyLookButtonMouseLeftButtonUp" />
+		</StackPanel>
+		<Image
+			Name="Avatar"
+			Width="99"
+			Height="99"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,22,18,0" />
+		<MediaElement
+			Name="Player"
+			Width="99"
+			Height="99"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,22,18,0"
+			LoadedBehavior="Manual"
+			MediaEnded="Player_MediaEnded" />
+	</Grid>
+</Window>

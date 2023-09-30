@@ -1,0 +1,19 @@
+﻿using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Windows.Resources;
+
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("UserTile")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTitle("UserTile")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyAssociatedContentFile("resources/userpic.png")]
+[assembly: ComVisible(false)]
+[assembly: Guid("42cc317c-6bfb-45a0-8609-62234789a9ba")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
